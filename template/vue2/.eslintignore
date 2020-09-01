@@ -1,0 +1,4 @@
+node_modules
+/dist
+/src/assets/js/*.js
+vue.config.js

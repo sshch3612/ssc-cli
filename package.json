@@ -1,0 +1,25 @@
+{
+  "name": "ssc-cli",
+  "version": "1.0.0",
+  "description": "自动生成项目结构",
+  "main": "index.js",
+  "scripts": {
+    "vue2": "node  script/vue2.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sshch3612/ssc-cli.git"
+  },
+  "keywords": [
+    "auto"
+  ],
+  "author": "sushaochun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sshch3612/ssc-cli/issues"
+  },
+  "homepage": "https://github.com/sshch3612/ssc-cli#readme",
+  "devDependencies": {
+  }
+}
