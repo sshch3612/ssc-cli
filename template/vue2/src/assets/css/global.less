@@ -13,8 +13,223 @@ body {
 }
 
 
-//详情弹框样式控制
-.plandetail {
+/**
+*  滚动条样式
+*/
+.scrollbar {
+  &::-webkit-scrollbar {
+    /*滚动条整体样式*/
+    width : 10px;
+    /*高宽分别对应横竖滚动条的尺寸*/
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    /*滚动条里面小方块*/
+    border-radius: 10px;
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    background   : #E1E8FA;
+    cursor       : pointer;
+  }
+
+  &::-webkit-scrollbar-track {
+    /*滚动条里面轨道*/
+    box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    background   : #0A2C66;
+  }
+}
+
+//element-ui Table样式重置
+.sscTable {
+  .el-table {
+    background: transparent;
+
+    .el-table__header-wrapper {
+      .el-table__header {
+        th {
+          box-sizing         : border-box;
+          height             : 50px;
+          background-color   : #295BB1;
+          color              : #fff;
+          font-weight        : bold;
+          font-size          : 14px;
+          // border          : 1px solid #1774cb;
+        }
+      }
+    }
+
+    .el-table__body-wrapper {
+      .el-table__body {
+        tbody {
+          tr {
+            &:nth-of-type(2n-1) {
+              font-size    : 18px;
+              background   : #E1E8FA;
+              // cursor    : pointer;
+
+              &.current-row {
+                background: #1265b5;
+                color     : #ffe50a;
+
+                &>td {
+                  background-color: #1265b5;
+                }
+              }
+
+              td {
+                padding-top      : 9px;
+                padding-bottom   : 9px;
+                font-size        : 16px;
+                // border-right  : 1px solid #45adff;
+                // border-bottom : 1px solid #45adff;
+
+                &:first-child {
+                  // border-left: 1px solid #45adff;
+                }
+
+                // &:last-child {
+                //   border-right: none;
+                // }
+              }
+            }
+
+            &:nth-of-type(2n) {
+              font-size    : 18px;
+              background   : #EEF2FE;
+              // cursor    : pointer;
+
+              &.current-row {
+                background: #1265b5;
+                color     : #ffe50a;
+
+                &>td {
+                  background-color: #1265b5;
+                }
+              }
+
+              td {
+                padding-top      : 9px;
+                padding-bottom   : 9px;
+                font-size        : 16px;
+                // border-right  : 1px solid #45adff;
+                // border-bottom : 1px solid #45adff;
+
+                &:first-child {
+                  // border-left: 1px solid #45adff;
+                }
+
+                // &:last-child {
+                //   border-right: none;
+                // }
+              }
+            }
+          }
+        }
+      }
+
+      .el-table__empty-block {
+        // min-height   : 60px;
+        // border-right : 1px solid #45adff;
+        // border-left  : 1px solid #45adff;
+        // border-bottom: 1px solid #45adff;
+
+        .el-table__empty-text {
+          font-size: 18px;
+          color    : #fff;
+        }
+      }
+    }
+  }
+
+  .el-table--enable-row-hover .el-table__body tr:hover>td {
+    background-color: rgba(0, 0, 0, 0) !important;
+  }
+
+  .el-table--border::after,
+  .el-table--group::after,
+  .el-table::before {
+    background-color: transparent;
+  }
+
+
+
+  .el-table .cell {
+    white-space: nowrap;
+  }
+}
+
+//element-ui 页码样式重置
+.sscPagination {
+  .el-pagination {
+    color: #fff;
+    float: right;
+
+    .el-pagination__jump {
+      color: #fff;
+    }
+
+    button:disabled {
+      background-color: #3894DC;
+    }
+
+    .btn-prev {
+      background-color: #3894DC;
+    }
+
+    .el-pager {
+      li {
+        background-color: #3894DC;
+      }
+    }
+
+    .btn-next {
+      background-color: #3894DC;
+    }
+  }
+
+  .el-pagination.is-background .btn-next,
+  .el-pagination.is-background .btn-prev,
+  .el-pagination.is-background .el-pager li {
+    box-sizing : border-box;
+    height     : 32px;
+    line-height: 30px;
+    border     : none;
+    background : transparent;
+    overflow   : hidden;
+    color      : #00B4FF;
+    border     : 1px solid #00B4FF;
+
+    span {
+      font-size  : 14px !important;
+      line-height: 32px;
+    }
+  }
+
+  .el-pagination.is-background .btn-next,
+  .el-pagination.is-background .btn-prev {
+    width: 60px;
+  }
+
+  .el-pagination.is-background .el-pager li {
+    // width: 31px;
+    width: auto;
+  }
+
+  .el-pagination.is-background .el-pager li:not(.disabled).active {
+    background-color: #00B4FF;
+    color           : #fff;
+  }
+
+  .el-pagination .el-pagination__total {
+    padding-left: 22px;
+    font-size   : 16px !important;
+    color       : #fff !important;
+  }
+}
+
+//element-ui  弹框样式重置
+.sscDialog {
   background   : #3AACE8;
   font-size    : 20px;
   color        : #fff;
@@ -141,184 +356,4 @@ body {
       }
     }
   }
-}
-
-/**
-*  滚动条样式
-*/
-.scrollbar::-webkit-scrollbar {
-  /*滚动条整体样式*/
-  width : 1px;
-  /*高宽分别对应横竖滚动条的尺寸*/
-  height: 1px;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-  /*滚动条里面小方块*/
-  border-radius: 10px;
-  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background   : #535353;
-}
-
-.scrollbar::-webkit-scrollbar-track {
-  /*滚动条里面轨道*/
-  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
-  background   : #ededed;
-}
-
-/**
-*table
-*/
-
-.operalist {
-  .el-table {
-    background: transparent;
-
-
-    .el-table__header-wrapper {
-      .el-table__header {
-        th {
-          box-sizing      : border-box;
-          height          : 48px;
-          background-color: #194ca3;
-          color           : #fff;
-          font-weight     : bold;
-          font-size       : 24px;
-          border          : 1px solid #1774cb;
-        }
-      }
-    }
-
-    .el-table__body-wrapper {
-      overflow-x: hidden !important;
-
-      .el-table__body {
-
-
-        tbody {
-          tr {
-            color     : #fff;
-            font-size : 18px;
-            background: rgba(0, 0, 0, 0.1);
-            cursor    : pointer;
-
-            &.current-row {
-              background: #1265b5;
-              color     : #ffe50a;
-
-              &>td {
-                background-color: #1265b5;
-              }
-            }
-
-            td {
-              padding-top   : 9px;
-              padding-bottom: 9px;
-              font-size     : 16px;
-              border-right  : 1px solid #45adff;
-              border-bottom : 1px solid #45adff;
-
-              &:first-child {
-                border-left: 1px solid #45adff;
-              }
-
-              // &:last-child {
-              //   border-right: none;
-              // }
-            }
-          }
-        }
-      }
-
-      .el-table__empty-block {
-        min-height   : 60px;
-        border-right : 1px solid #45adff;
-        border-left  : 1px solid #45adff;
-        border-bottom: 1px solid #45adff;
-
-        .el-table__empty-text {
-          font-size: 18px;
-          color    : #fff;
-        }
-      }
-    }
-  }
-
-  .el-table--enable-row-hover .el-table__body tr:hover>td {
-    background-color: rgba(0, 0, 0, 0) !important;
-  }
-
-  .el-table--border::after,
-  .el-table--group::after,
-  .el-table::before {
-    background-color: transparent;
-  }
-
-
-
-  .el-table .cell {
-    white-space: nowrap;
-  }
-}
-
-.el-pagination {
-  color: #fff;
-  float: right;
-
-  button:disabled {
-    background-color: #3894DC;
-  }
-
-  .btn-prev {
-    background-color: #3894DC;
-  }
-
-  .el-pager {
-    li {
-      background-color: #3894DC;
-    }
-  }
-
-  .btn-next {
-    background-color: #3894DC;
-  }
-}
-
-.el-pagination.is-background .btn-next,
-.el-pagination.is-background .btn-prev,
-.el-pagination.is-background .el-pager li {
-  box-sizing : border-box;
-  height     : 32px;
-  line-height: 30px;
-  border     : none;
-  background : #082f56;
-  overflow   : hidden;
-  color      : #34B6F4;
-
-  span {
-    font-size  : 14px !important;
-    line-height: 32px;
-  }
-}
-
-.el-pagination.is-background .btn-next,
-.el-pagination.is-background .btn-prev {
-  width: 38px;
-}
-
-.el-pagination.is-background .el-pager li {
-  // width: 31px;
-  width: auto;
-}
-
-.el-pagination.is-background .el-pager li:not(.disabled).active {
-  background-color: #34B6F4;
-  color           : #084E8A;
-}
-
-.el-pagination .el-pagination__total {
-  padding-left: 22px;
-  font-size   : 16px !important;
-  color       : #3894dc !important;
 }
