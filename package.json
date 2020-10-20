@@ -1,6 +1,6 @@
 {
   "name": "ssc-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "自动生成项目结构",
   "main": "index.js",
   "bin": {
